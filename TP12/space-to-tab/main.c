@@ -1,0 +1,49 @@
+// Enable POSIX standard (we use getline)
+#define _POSIX_C_SOURCE 200809L
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <errno.h>
+#include "space-to-tab.h"
+
+int main(int argc, char **argv)
+{
+    if(argc < 3) {
+        fprintf(stderr, "Usage: ./space-to-tab FILE_INPUT FILE_OUTPUT\n");
+        return 1;
+    }
+
+    FILE *in = fopen(argv[1], "r");
+    if(in == NULL)
+    {
+        fputs("erreur de lecture", stderr);
+        printf("%s\n", strerror(errno));
+        return 2;
+    }
+
+    FILE *out = fopen(argv[2], "w");
+    if(out == NULL)
+    {
+        fputs("erreur d'ouverture", stderr);
+        printf("%s\n", strerror(errno));
+        return 3;
+    }
+    char *buffer = NULL;
+    size_t length = 0;
+
+    ssize_t len;
+    while(-1 != (len = getline(&buffer, &length, in)))
+    {
+        if(buffer == NULL)
+        {
+            fputs("allocation error", stderr);
+            return 1;
+        }
+        space_to_tab(buffer);
+        fputs(buffer, out);
+    }
+
+    free(buffer);
+    return 0;
+}

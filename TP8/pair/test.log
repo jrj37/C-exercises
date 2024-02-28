@@ -1,0 +1,35 @@
+
+####
+#### Compilation
+####
+gcc -o tests.o -c tests.c 
+cc    -c -o pair.o pair.c
+gcc -o tests tests.o pair.o
+
+####
+#### Execution
+####
+test_create
+Done
+test_get_second
+Done
+test_swap
+Done
+test_error_malloc
+Done
+test_hidden_struct
+Done
+
+####
+#### Execution avec Valgrind
+####
+test_create
+Done
+test_get_second
+Done
+test_swap
+Done
+test_error_malloc
+Done
+test_hidden_struct
+Done

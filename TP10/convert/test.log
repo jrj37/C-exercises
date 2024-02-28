@@ -1,0 +1,19 @@
+
+####
+#### Compilation
+####
+cc     convert.c   -o convert
+
+####
+#### Test Erreur 1
+####
+pas le bon nbre d'argument
+
+####
+#### Test Erreur 2
+####
+le premier fichier ne peut pas être ouvert
+####
+#### Test 0
+####
+10

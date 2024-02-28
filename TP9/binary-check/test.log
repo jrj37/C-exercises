@@ -1,0 +1,93 @@
+
+####
+#### Compilation
+####
+gcc -o tests.o -c tests.c 
+gcc -o checked-int.o -c checked-int.c
+gcc -o tests tests.o checked-int.o
+
+####
+#### Execution avec Valgrind
+####
+
+####
+#### Test 0
+####
+ff321ea6ff321ea6 
+ff321ea6 ff321ea6 
+test_encode_decode
+Done
+
+####
+#### Test 1
+####
+1100000011 
+ff321ea6ff321ea6 
+test_encode
+Done
+ff321ea6ff321ea6 
+ff321ea6 ff321ea6 
+test_encode_decode
+Done
+
+####
+#### Test 2
+####
+ff321ea6ff321ea6 
+test_check
+Done
+1100000011 
+ff321ea6ff321ea6 
+test_encode
+Done
+ff321ea6ff321ea6 
+ff321ea6 ff321ea6 
+test_encode_decode
+Done
+
+####
+#### Test 3
+####
+11 12 
+12 11 
+ff321ea6 fa321ea6 
+test_decode_null
+Done
+ff321ea6ff321ea6 
+test_check
+Done
+1100000011 
+ff321ea6ff321ea6 
+test_encode
+Done
+ff321ea6ff321ea6 
+ff321ea6 ff321ea6 
+test_encode_decode
+Done
+
+####
+#### Test 4
+####
+11 11 
+ff321ea6 ff321ea6 
+11 12 
+12 11 
+ff321ea6 fa321ea6 
+test_decode_p
+Done
+11 12 
+12 11 
+ff321ea6 fa321ea6 
+test_decode_null
+Done
+ff321ea6ff321ea6 
+test_check
+Done
+1100000011 
+ff321ea6ff321ea6 
+test_encode
+Done
+ff321ea6ff321ea6 
+ff321ea6 ff321ea6 
+test_encode_decode
+Done

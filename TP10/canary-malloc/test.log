@@ -1,0 +1,43 @@
+
+####
+#### Compilation
+####
+gcc -o tests.o -c tests.c 
+gcc -o ca_malloc.o -c ca_malloc.c
+gcc -o tests tests.o ca_malloc.o
+
+####
+#### Execution
+####
+test_ok
+Done
+test_ok_2
+Done
+test_erreur
+Done
+test_erreur_2
+Done
+test_erreur_3
+Done
+
+####
+#### Execution avec Valgrind
+####
+
+
+Message
+
+Message
+
+Message
+
+test_ok
+Done
+test_ok_2
+Done
+test_erreur
+Done
+test_erreur_2
+Done
+test_erreur_3
+Done

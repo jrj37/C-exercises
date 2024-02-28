@@ -1,0 +1,27 @@
+
+####
+#### Compilation
+####
+gcc -g -Werror -Wall -Wextra -o space-to-tab.o -c space-to-tab.c
+gcc -g -Werror -Wall -Wextra -o tests.o -c tests.c
+gcc -o tests space-to-tab.o tests.o
+
+####
+#### Execution avec Valgrind
+####
+test_1
+Done
+test_2
+Done
+test_3
+Done
+test_4
+Done
+test_5
+Done
+test_6
+Done
+test_7
+Done
+test_8
+Done
